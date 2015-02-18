@@ -11,8 +11,8 @@ $title = $slots->get('title', "static");
 <head>
     <link rel="stylesheet" type="text/css"
           href="/vendor/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="/vendor/jquery/dist/js/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/dist/js/jquery.min.js"></script>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initialscale=1,
             maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
@@ -31,16 +31,15 @@ $title = $slots->get('title', "static");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/static">My Site</a>
+            <a class="navbar-brand" href="/static?titel=My%20Site">My Site</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li <?php echo(($title == "Home") ? 'class="active"' : '') ?>>
-                    <a href="/home">
+                    <a href="/static?titel=Home">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-                        <?php echo(($slots->get('title') == "Home") ? '<span class="sr-only">(current)</span>' : '') ?>
+                        <?php echo(($title == "Home") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
                 <li <?php echo(($title == "Music") ? 'class="active"' : '') ?>>
@@ -49,16 +48,16 @@ $title = $slots->get('title', "static");
                         <?php echo(($title == "Music") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
-                <li <?php echo(($title == "User") ? 'class="active"' : '') ?>>
+                <li <?php echo(($title == "Blog") ? 'class="active"' : '') ?>>
                     <a href="/blog">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Blog
-                        <?php echo(($slots->get('title') == "blog") ? '<span class="sr-only">(current)</span>' : '') ?>
+                        <?php echo(($title == "blog") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
                 <li <?= (($title == "Options") ? 'class="active"' : '') ?>>
                     <a href="/options">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Options
-                        <?php echo(($slots->get('title') == "Options") ? '<span class="sr-only">(current)</span>' : '') ?>
+                        <?php echo(($title == "Options") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
             </ul>

@@ -1,6 +1,13 @@
-<?php $view->extend('layout.html.php') ?>
-
-<?php $view['slots']->set('title', "Static") ?>
+<?php
+/**
+ * @var $view
+ * @var $titel
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
+$slots = $view['slots'];
+$view->extend('layout.html.php');
+$slots->set('title', $titel)
+?>
 
 <div class="container mainsite">
     <div class="row">

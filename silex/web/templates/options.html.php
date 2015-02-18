@@ -1,3 +1,8 @@
-<?php $view->extend('layout.html.php') ?>
-
-<?php $view['slots']->set('title', "Options") ?>
+<?php
+/**
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
+$slots = $view['slots'];
+$view->extend('layout.html.php');
+$slots->set('title', "Options");
