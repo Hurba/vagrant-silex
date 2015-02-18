@@ -26,10 +26,15 @@ $app->get('/music', function () use ($app) {
     );
 });
 
-$app->get('/user', function () use ($app) {
-    return $app['templating']->render(
-        'user.html.php'
-    );
+$app->match('/blog', function (Request $request) use ($app) {
+    if ($request->isMethod('post')) {
+        $titel = $request->get("titel");
+        $text = $request->get("text");
+        return $titel . $text;
+    } else {
+        return $app['templating']->render(
+            'blog.html.php');
+    }
 });
 
 $app->get('/options', function () use ($app) {

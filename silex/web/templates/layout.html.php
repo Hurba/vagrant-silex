@@ -1,4 +1,11 @@
-<?php $title = $view['slots']->get('title', "static") ?>
+<?php
+/**
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
+$slots = $view['slots'];
+$title = $slots->get('title', "static");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +16,8 @@
     <meta name="viewport" content="width=device-width, initialscale=1,
             maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
-    <title><?php $view['slots']->output('title', "My Site") ?></title>
+    <base href="http://localhost:8001/"/>
+    <title><?php $slots->output('title', "My Site") ?></title>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -32,7 +40,7 @@
                 <li <?php echo(($title == "Home") ? 'class="active"' : '') ?>>
                     <a href="/home">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-                        <?php echo(($view['slots']->get('title') == "Home") ? '<span class="sr-only">(current)</span>' : '') ?>
+                        <?php echo(($slots->get('title') == "Home") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
                 <li <?php echo(($title == "Music") ? 'class="active"' : '') ?>>
@@ -42,25 +50,25 @@
                     </a>
                 </li>
                 <li <?php echo(($title == "User") ? 'class="active"' : '') ?>>
-                    <a href="/user">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> User
-                        <?php echo(($view['slots']->get('title') == "User") ? '<span class="sr-only">(current)</span>' : '') ?>
+                    <a href="/blog">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Blog
+                        <?php echo(($slots->get('title') == "blog") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
-                <li <?=(($title == "Options") ? 'class="active"' : '') ?>>
+                <li <?= (($title == "Options") ? 'class="active"' : '') ?>>
                     <a href="/options">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Options
-                        <?php echo(($view['slots']->get('title') == "Options") ? '<span class="sr-only">(current)</span>' : '') ?>
+                        <?php echo(($slots->get('title') == "Options") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
             </ul>
-        </div>
+       </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
 </nav>
 
-<?php $view['slots']->output('_content') ?>
+<?php $slots->output('_content') ?>
 <hr/>
 </body>
 </html>
