@@ -42,26 +42,26 @@ $title = $slots->get('title', "static");
                         <?php echo(($title == "Home") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
-                <li <?php echo(($title == "Music") ? 'class="active"' : '') ?>>
-                    <a href="/music">
-                        <span class="glyphicon glyphicon-music" aria-hidden="true"></span> Music
-                        <?php echo(($title == "Music") ? '<span class="sr-only">(current)</span>' : '') ?>
+                <li <?php echo(($title == "Pictures") ? 'class="active"' : '') ?>>
+                    <a href="/pics">
+                        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Pictures
+                        <?php echo(($title == "Pictures") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
-                <li <?php echo(($title == "Blog") ? 'class="active"' : '') ?>>
-                    <a href="/blog">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Blog
-                        <?php echo(($title == "blog") ? '<span class="sr-only">(current)</span>' : '') ?>
+                <li <?php echo(($title == "Blogwrite") ? 'class="active"' : '') ?>>
+                    <a href="/blogwrite">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Blogwrite
+                        <?php echo(($title == "Blogwrite") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
-                <li <?= (($title == "Options") ? 'class="active"' : '') ?>>
-                    <a href="/options">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Options
-                        <?php echo(($title == "Options") ? '<span class="sr-only">(current)</span>' : '') ?>
+                <li <?= (($title == "Blogread") ? 'class="active"' : '') ?>>
+                    <a href="/blogread">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Blogread
+                        <?php echo(($title == "Blogread") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
             </ul>
-       </div>
+        </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->

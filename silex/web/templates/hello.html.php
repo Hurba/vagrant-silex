@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $view
+ * @var $view   \Symfony\Component\Templating\PhpEngine
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];

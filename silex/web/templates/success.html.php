@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $view
+ * @var $view   \Symfony\Component\Templating\PhpEngine
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];
@@ -14,7 +14,8 @@ $slots->set('title', "Blog")
             <div class="alert alert-success" role="alert">
                 <b>Erfolgreich Gespeichert!</b>
             </div>
-            <a class="btn btn-primary" href="/blog" role="button">Weiteren Eintrag hinzufügen?</a>
+            <a class="btn btn-primary" href="/blogwrite" role="button">Weiteren Eintrag hinzufügen?</a>
+            <a class="btn btn-primary" href="/blogread" role="button">Alle Eintr&aumlge lesen?</a>
         </div>
     </div>
 </div>

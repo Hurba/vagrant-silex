@@ -5,7 +5,7 @@
  */
 $slots = $view['slots'];
 $view->extend('layout.html.php');
-$slots->set('title', "Blog")
+$slots->set('title', "Blogwrite")
 ?>
 
 <div class="container">
@@ -14,12 +14,13 @@ $slots->set('title', "Blog")
             <div class="panel panel-default">
                 <div class="panel-heading">Neuer Beitrag</div>
                 <div class="panel-body">
-                    <?php if ($error == true) { ?>
+                    <?php /** @var $error */
+                    if ($error == true) { ?>
                         <div class="alert alert-danger" role="alert">
                             Bitte alle Felder ausfüllen!
                         </div>
                     <?php } ?>
-                    <form action="/blog" method="post">
+                    <form action="/blogwrite" method="post">
                         <div class="form-group">
                             <label for="titel">Titel</label>
                             <input type="text" class="form-control" id="titel" name="titel"

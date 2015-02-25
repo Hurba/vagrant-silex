@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $view
+ * @var $view   \Symfony\Component\Templating\PhpEngine
  * @var $titel
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
@@ -17,7 +17,7 @@ $slots->set('title', $titel)
 
                 <p>LALAlalskejnansdnfsjcvnakjdbv ah uaehfd jad</p>
 
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">
+                <p><a class="btn btn-primary btn-lg" href="https://www.google.de/" role="button">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                         Search
                     </a></p>

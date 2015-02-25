@@ -1,7 +1,7 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
 
-/** @var $app*/
+/** @var $app */
 
 $app->get('/welcome/{name}', function ($name) use ($app) {
     return $app['templating']->render(
@@ -11,31 +11,32 @@ $app->get('/welcome/{name}', function ($name) use ($app) {
 });
 
 $app->get('/static', function (Request $request) use ($app) {
-    $titel = $request->get('titel','');
+    $titel = $request->get('titel', "My Site");
     return $app['templating']->render(
         'static.html.php',
         array('titel' => $titel)
     );
 });
 
-$app->get('/home', function () use ($app) {
+$app->get('/home', function (Request $request) use ($app) {
+    $titel = $request->get('titel', 'Home');
     return $app['templating']->render(
         'static.html.php',
-        array('titel' => 'Home')
+        array('titel' => $titel)
     );
 });
 
-$app->get('/music', function () use ($app) {
+$app->get('/pics', function () use ($app) {
     return $app['templating']->render(
-        'music.html.php'
+        'pics.html.php'
     );
 });
 
-$app->match('/blog', function (Request $request) use ($app) {
+$app->match('/blogwrite', function (Request $request) use ($app) {
     $error = false;
     if ($request->isMethod('post')) {
-        $titel = $request->get('titel','');
-        $text = $request->get('text','');
+        $titel = $request->get('titel', '');
+        $text = $request->get('text', '');
         if ($titel == '' || $text == '') {
             $error = true;
         } else {
@@ -56,16 +57,29 @@ $app->match('/blog', function (Request $request) use ($app) {
     }
 
     return $app['templating']->render(
-        'blog.html.php',
+        'blogwrite.html.php',
         array('error' => $error)
     );
 });
 
-$app->get('/options', function () use ($app) {
+$app->get('/blogread', function () use ($app) {
+    $dbConnection = $app['db'];
+    $posts = $dbConnection->fetchAll('SELECT * FROM blog_post');
     return $app['templating']->render(
-        'options.html.php'
+        'blogread.html.php',
+        array('posts' => $posts)
     );
 });
+
+$app->get('/blogread/{id}', function ($id) use ($app) {
+    $dbConnection = $app['db'];
+    $post = $dbConnection->fetchAssoc('SELECT * FROM blog_post WHERE id = ?', array($id));
+    return $app['templating']->render(
+        'eintrag.html.php',
+        array( 'post' => $post )
+    );
+});
+
 
 $app->get('/welcome-twig/{name}', function ($name) use ($app) {
     return $app['twig']->render(
