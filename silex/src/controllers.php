@@ -1,7 +1,28 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /** @var $app */
+
+$app->register(new Silex\Provider\SessionServiceProvider());
+
+$app->match('/login', function (Request $request) use ($app) {
+    $logedin = false;
+    if($request->isMethod('post')) {
+        $username = $request->get('username', null);
+    }else{
+        $username = $app['session']->get('user', null);
+    }
+
+    if ($username != null || $username != '') {
+        $app['session']->set('user', array('username' => $username));
+        $logedin = true;
+    }
+    return $app['templating']->render(
+        'login.html.php',
+        array('logedin' => $logedin)
+    );
+});
 
 $app->get('/welcome/{name}', function ($name) use ($app) {
     return $app['templating']->render(
@@ -34,10 +55,15 @@ $app->get('/pics', function () use ($app) {
 
 $app->match('/blogwrite', function (Request $request) use ($app) {
     $error = false;
+    $logedin = false;
+    $user = $app['session']->get('user');
+    if ($user != null || $user != "") {
+        $logedin = true;
+    }
     if ($request->isMethod('post')) {
         $titel = $request->get('titel', '');
         $text = $request->get('text', '');
-        if ($titel == '' || $text == '') {
+        if ($titel == '' || $text == '' || $logedin == false) {
             $error = true;
         } else {
             /** @var $dbConnecton Doctrine\DBAL\Connection */
@@ -58,7 +84,10 @@ $app->match('/blogwrite', function (Request $request) use ($app) {
 
     return $app['templating']->render(
         'blogwrite.html.php',
-        array('error' => $error)
+        array(
+            'error' => $error,
+            'logedin' => $logedin
+        )
     );
 });
 
@@ -76,7 +105,7 @@ $app->get('/blogread/{id}', function ($id) use ($app) {
     $post = $dbConnection->fetchAssoc('SELECT * FROM blog_post WHERE id = ?', array($id));
     return $app['templating']->render(
         'eintrag.html.php',
-        array( 'post' => $post )
+        array('post' => $post)
     );
 });
 

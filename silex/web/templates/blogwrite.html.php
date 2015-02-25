@@ -1,6 +1,7 @@
 <?php
 /**
- * @var $view
+ * @var $view \Symfony\Component\Templating\PhpEngine
+ * @var $error
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];
@@ -14,10 +15,10 @@ $slots->set('title', "Blogwrite")
             <div class="panel panel-default">
                 <div class="panel-heading">Neuer Beitrag</div>
                 <div class="panel-body">
-                    <?php /** @var $error */
-                    if ($error == true) { ?>
+                    <?php if ($error == true) { ?>
                         <div class="alert alert-danger" role="alert">
                             Bitte alle Felder ausfüllen!
+                            Oder oben rechts Einlogen!
                         </div>
                     <?php } ?>
                     <form action="/blogwrite" method="post">

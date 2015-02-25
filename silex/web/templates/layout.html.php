@@ -61,6 +61,14 @@ $title = $slots->get('title', "static");
                     </a>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li <?= (($title == "Login") ? 'class="active"' : '') ?>>
+                    <a href="/login">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login
+                        <?php echo(($title == "Login") ? '<span class="sr-only">(current)</span>' : '') ?>
+                    </a>
+                </li>
+            </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
