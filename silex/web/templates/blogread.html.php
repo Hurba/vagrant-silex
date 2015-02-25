@@ -1,5 +1,6 @@
 <?php
 /**
+ * @var $posts
  * @var $view \Symfony\Component\Templating\PhpEngine
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
@@ -17,8 +18,7 @@ $slots->set('title', "Blogread");
                 <!-- List group -->
                 <ul class="list-group">
 
-                    <?php /** @var $posts */
-                    foreach ($posts as $post) {
+                    <?php foreach ($posts as $post) {
                         $id = $post["id"];
                         $titel = $post["title"];
                         $created_at = $post["created_at"];
