@@ -2,6 +2,7 @@
 /**
  * @var $view \Symfony\Component\Templating\PhpEngine
  * @var $error
+ * @var $logedin
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];
@@ -12,13 +13,17 @@ $slots->set('title', "Blogwrite")
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Neuer Beitrag</div>
+            <?php if ($logedin == false) { ?>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Achtung! Erst oben rechts Einloggen</div>
+            <?php } else{ ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Neuer Beitrag</div>
+            <?php } ?>
                 <div class="panel-body">
                     <?php if ($error == true) { ?>
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-warning" role="alert">
                             Bitte alle Felder ausfüllen!
-                            Oder oben rechts Einloggen!
                         </div>
                     <?php } ?>
                     <form action="/blogwrite" method="post">

@@ -96,7 +96,8 @@ $app->match('/blogwrite', function (Request $request) use ($app) {
                 array(
                     'title' => $titel,
                     'text' => $text,
-                    'created_at' => $createdAt
+                    'created_at' => $createdAt,
+                    'user' => $user
                 )
             );
             return $app['templating']->render(
