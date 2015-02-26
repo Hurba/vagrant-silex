@@ -15,7 +15,7 @@ $app->match('/login', function (Request $request) use ($app) {
     }
 
     if ($username != null || $username != '') {
-        $app['session']->set('user', array('username' => $username));
+        $app['session']->set('user', $username);
         $logedin = true;
     }
     return $app['templating']->render(
@@ -36,9 +36,9 @@ $app->get('/logout', function () use ($app) {
     );
 });
 
-$app->get('/logout#', function () use ($app) {
+$app->get('/logout/out', function () use ($app) {
     $logedin = false;
-    $user = $app['session']->set('user', array('username' => null));
+    $app['session']->set('user', null);
     return $app['templating']->render(
         'logout.html.php',
         array('logedin' => $logedin)

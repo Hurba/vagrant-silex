@@ -18,7 +18,7 @@ $slots->set('title', "Blogwrite")
                     <?php if ($error == true) { ?>
                         <div class="alert alert-danger" role="alert">
                             Bitte alle Felder ausfüllen!
-                            Oder oben rechts Einlogen!
+                            Oder oben rechts Einloggen!
                         </div>
                     <?php } ?>
                     <form action="/blogwrite" method="post">
