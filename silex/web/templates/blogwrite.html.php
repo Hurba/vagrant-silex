@@ -14,14 +14,15 @@ $slots->set('title', "Blogwrite")
     <div class="row">
         <div class="col-xs-12">
             <!-- Change panel design whether you are logedin or not  -->
-            <?php if ($logedin == false) { ?>
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Achtung! Erst oben rechts Einloggen</div>
-            <?php } else{ ?>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Neuer Beitrag</div>
-            <?php } ?>
-            <!-- end of panel design -->
+            <div
+                <?php if ($logedin == false) { ?>
+                    class="panel panel-danger">
+                        <div class="panel-heading">Achtung! Erst oben rechts Einloggen</div>
+                <?php } else { ?>
+                    class="panel panel-default">
+                        <div class="panel-heading">Neuer Beitrag</div>
+                <?php } ?>
+                <!-- end of panel design -->
                 <div class="panel-body">
                     <!-- alert if error == true -->
                     <?php if ($error == true) { ?>

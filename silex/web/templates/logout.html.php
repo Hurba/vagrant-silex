@@ -13,15 +13,16 @@ $slots->set('title', "Logout")
     <div class="row">
         <div class="col-xs-12">
             <!-- Change panel design whether you are logedin or not  -->
-            <?php if ($logedin == true) { ?>
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Sie sind noch Angemeldet</div>
-            <?php } ?>
-            <?php if ($logedin == false) { ?>
-                <div class="panel panel-success">
-                    <div class="panel-heading">Erfolgreich Abgemeldet</div>
-            <?php } ?>
-            <!-- end of panel design -->
+            <div
+                <?php if ($logedin == true) { ?>
+                    class="panel panel-danger">
+                        <div class="panel-heading">Sie sind noch Angemeldet</div>
+                <?php } ?>
+                <?php if ($logedin == false) { ?>
+                    class="panel panel-success">
+                        <div class="panel-heading">Erfolgreich Abgemeldet</div>
+                <?php } ?>
+                <!-- end of panel design -->
                 <div class="panel-body">
                     <!-- Logout button -->
                     <p><a class="btn btn-primary" href="/logout/out" role="button">

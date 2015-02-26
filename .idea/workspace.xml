@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30d4ce40-e058-4e8e-ac0a-7fc606ea2a66" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/blogread.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/blogread.html.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/blogwrite.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/blogwrite.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/src/controllers.php" afterPath="$PROJECT_DIR$/silex/src/controllers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/eintrag.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/eintrag.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/hello.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/hello.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/layout.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/layout.html.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/login.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/login.html.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/logout.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/logout.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/pics.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/pics.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/static.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/static.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/success.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/success.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vagrant-silex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +28,38 @@
     <favorites_list name="vagrant-silex" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="login.html.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/silex/web/templates/login.html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.869565" vertical-offset="103" max-vertical-offset="675">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blogwrite.html.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/silex/web/templates/blogwrite.html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7604895" vertical-offset="0" max-vertical-offset="855">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logout.html.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/silex/web/templates/logout.html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.652174" vertical-offset="5" max-vertical-offset="615">
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,17 +77,17 @@
         <option value="$PROJECT_DIR$/silex/sql/datadefinition.sql" />
         <option value="$PROJECT_DIR$/silex/src/controllers.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/blogread.html.php" />
-        <option value="$PROJECT_DIR$/silex/web/templates/blogwrite.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/eintrag.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/hello.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/layout.html.php" />
-        <option value="$PROJECT_DIR$/silex/web/templates/login.html.php" />
-        <option value="$PROJECT_DIR$/silex/web/templates/logout.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/pics.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/success.html.php" />
         <option value="$PROJECT_DIR$/silex/web/vendor/MyCSS/carousel.css" />
         <option value="$PROJECT_DIR$/silex/web/templates/static.html.php" />
         <option value="$PROJECT_DIR$/silex/web/vendor/MyCSS/MySite.css" />
+        <option value="$PROJECT_DIR$/silex/web/templates/logout.html.php" />
+        <option value="$PROJECT_DIR$/silex/web/templates/login.html.php" />
+        <option value="$PROJECT_DIR$/silex/web/templates/blogwrite.html.php" />
       </list>
     </option>
   </component>
@@ -100,7 +122,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,6 +280,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,15 +312,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -338,7 +360,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1362" height="728" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -347,19 +369,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962853" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.124814264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.124814264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32810047" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -394,10 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1410">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <marker date="1424976242666" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_post..." />
-            <marker date="1424976242666" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_post..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,13 +651,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/silex/sql/datamanipulation.sql">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5769231" vertical-offset="0" max-vertical-offset="135">
           <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/silex/sql/datadefinition.sql">
@@ -653,10 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-103.695656" vertical-offset="0" max-vertical-offset="2565">
           <caret line="159" column="19" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
-          <folding>
-            <marker date="1424976242666" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_post..." />
-            <marker date="1424976242666" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..blog_post..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.47826" vertical-offset="0" max-vertical-offset="675">
           <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.956522" vertical-offset="0" max-vertical-offset="600">
           <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.173913" vertical-offset="0" max-vertical-offset="270">
           <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,23 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silex/web/templates/login.html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.826087" vertical-offset="73" max-vertical-offset="660">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silex/web/templates/logout.html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.304348" vertical-offset="13" max-vertical-offset="600">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.913044" vertical-offset="0" max-vertical-offset="975">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.695652" vertical-offset="0" max-vertical-offset="405">
           <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,15 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
           <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silex/web/templates/blogwrite.html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5769231" vertical-offset="0" max-vertical-offset="840">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-61.304348" vertical-offset="0" max-vertical-offset="1560">
           <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="595">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,6 +741,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2062937" vertical-offset="0" max-vertical-offset="990">
           <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silex/web/templates/logout.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.652174" vertical-offset="5" max-vertical-offset="615">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silex/web/templates/login.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.869565" vertical-offset="103" max-vertical-offset="675">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silex/web/templates/blogwrite.html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7604895" vertical-offset="0" max-vertical-offset="855">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
           <folding />
         </state>
       </provider>
