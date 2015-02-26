@@ -17,8 +17,9 @@ $slots->set('title', "Blogread");
                 <div class="panel-heading">Blogeintr&aumlge</div>
                 <!-- List group -->
                 <ul class="list-group">
-
+                    <!-- display all blogposts with foreach -->
                     <?php foreach ($posts as $post) {
+                        //get all parameters
                         $id = $post["id"];
                         $titel = $post["title"];
                         $created_at = $post["created_at"];
@@ -26,6 +27,7 @@ $slots->set('title', "Blogread");
                         $user = $post["user"];
                         ?>
                         <li class="list-group-item">
+                            <!-- write parameters in blogdesign -->
                             <b> <?= $titel ?> </b> vom <i> <?= $created_at ?> </i> by <?= $user ?><br/>
                             <?= $text ?>
                             <a href="/blogread/<?= $id ?>">[...]</a>

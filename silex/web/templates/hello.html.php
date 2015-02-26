@@ -9,4 +9,5 @@ $view->extend('layout.html.php');
 $slots->set('title', "Hello")
 ?>
 
+<!-- returns a page with hello and the entered name -->
 Hello <?= $name; ?>!

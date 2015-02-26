@@ -10,6 +10,7 @@ $slots->set('title', "Pictures");
 
 <div class="container">
     <div class="row">
+        <!-- centered carousel and minimizing for larger screens for better picture quality -->
         <div class="col-xs-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
             <div id="MyPictureCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -19,7 +20,7 @@ $slots->set('title', "Pictures");
                     <li data-target="#MyPictureCarousel" data-slide-to="2"></li>
                 </ol>
 
-                <!-- Wrapper for slides -->
+                <!-- Wrapper for slides and images -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <img src="/vendor/images/Berg.jpg" alt="Bild von Berg">

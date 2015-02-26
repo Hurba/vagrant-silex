@@ -1,42 +1,53 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 /** @var $app */
 
+// Session provider registration
 $app->register(new Silex\Provider\SessionServiceProvider());
 
+//Loginpage
 $app->match('/login', function (Request $request) use ($app) {
+    //always set logedin = false and check later if you are logedin
     $logedin = false;
+    //Login via formular
     if ($request->isMethod('post')) {
         $username = $request->get('username', null);
     } else {
+        //else check session->User
         $username = $app['session']->get('user', null);
     }
-
+    //If User not null or '' then you are logedin (= true) and set session->User
     if ($username != null || $username != '') {
         $app['session']->set('user', $username);
         $logedin = true;
     }
+    //return login template with var: $logedin
     return $app['templating']->render(
         'login.html.php',
         array('logedin' => $logedin)
     );
 });
 
+//Logoutpage
 $app->get('/logout', function () use ($app) {
     $logedin = false;
+    //Get Username from session or it's null
     $user = $app['session']->get('user');
-    if ($user != null || $user != "") {
+    //Check if you are logedin
+    if ($user != null || $user != '') {
         $logedin = true;
     }
+    //return logout template with var: $logedin
     return $app['templating']->render(
         'logout.html.php',
         array('logedin' => $logedin)
     );
 });
 
+//Logout, then render Logoutpage
 $app->get('/logout/out', function () use ($app) {
+    //Set logedin = false and set session->User null
     $logedin = false;
     $app['session']->set('user', null);
     return $app['templating']->render(
@@ -45,7 +56,7 @@ $app->get('/logout/out', function () use ($app) {
     );
 });
 
-
+//welcomepage not in navigation
 $app->get('/welcome/{name}', function ($name) use ($app) {
     return $app['templating']->render(
         'hello.html.php',
@@ -53,14 +64,17 @@ $app->get('/welcome/{name}', function ($name) use ($app) {
     );
 });
 
+//staticpage
 $app->get('/static', function (Request $request) use ($app) {
-    $titel = $request->get('titel', "My Site");
+    //no title in url, default is My Site
+    $titel = $request->get('titel', 'My Site');
     return $app['templating']->render(
         'static.html.php',
         array('titel' => $titel)
     );
 });
 
+//another route for staticpage with title = Home
 $app->get('/home', function (Request $request) use ($app) {
     $titel = $request->get('titel', 'Home');
     return $app['templating']->render(
@@ -69,25 +83,32 @@ $app->get('/home', function (Request $request) use ($app) {
     );
 });
 
+//picturespage
 $app->get('/pics', function () use ($app) {
     return $app['templating']->render(
         'pics.html.php'
     );
 });
 
+//blogwrite page with dbConnecton
 $app->match('/blogwrite', function (Request $request) use ($app) {
+    //check if all fields are filled with error(default is false)
     $error = false;
+    //also check if user is logedin like abouve
     $logedin = false;
     $user = $app['session']->get('user');
-    if ($user != null || $user != "") {
+    if ($user != null || $user != '') {
         $logedin = true;
     }
     if ($request->isMethod('post')) {
+        //get formular data
         $titel = $request->get('titel', '');
         $text = $request->get('text', '');
-        if ($titel == '' || $text == '' ) {
+        if ($titel == '' || $text == '') {
+            //if formular is not filled error = true
             $error = true;
-        } else if($logedin){
+        } else if ($logedin) {
+            //all parameters are OK then you write the blog into DB and render successpage
             /** @var $dbConnecton Doctrine\DBAL\Connection */
             $dbConnection = $app['db'];
             $createdAt = date('Y-m-d');
@@ -102,9 +123,9 @@ $app->match('/blogwrite', function (Request $request) use ($app) {
             );
             return $app['templating']->render(
                 'success.html.php');
-        }
+        }//OK ends
     }
-
+    //render template with var: $error, $logedin
     return $app['templating']->render(
         'blogwrite.html.php',
         array(
@@ -114,8 +135,10 @@ $app->match('/blogwrite', function (Request $request) use ($app) {
     );
 });
 
+//read all blogentries
 $app->get('/blogread', function () use ($app) {
     $dbConnection = $app['db'];
+    // get all entries form DB
     $posts = $dbConnection->fetchAll('SELECT * FROM blog_post');
     return $app['templating']->render(
         'blogread.html.php',
@@ -123,8 +146,10 @@ $app->get('/blogread', function () use ($app) {
     );
 });
 
+//read one blogentry
 $app->get('/blogread/{id}', function ($id) use ($app) {
     $dbConnection = $app['db'];
+    // get one entry from DB
     $post = $dbConnection->fetchAssoc('SELECT * FROM blog_post WHERE id = ?', array($id));
     return $app['templating']->render(
         'eintrag.html.php',
@@ -132,7 +157,7 @@ $app->get('/blogread/{id}', function ($id) use ($app) {
     );
 });
 
-
+//not used twigpage
 $app->get('/welcome-twig/{name}', function ($name) use ($app) {
     return $app['twig']->render(
         'hello.html.twig',

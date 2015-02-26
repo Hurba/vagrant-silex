@@ -14,14 +14,17 @@ $slots->set('title', "Blogread");
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <!-- Heading of one entry -->
                     <b><?= $post["title"] ?></b> vom
                     <i><?= $post["created_at"] ?></i> by
                     <?= $post["user"] ?>
                 </div>
                 <div class="panel-body">
+                    <!-- Text of one entry -->
                     <?= $post["text"] ?>
                 </div>
                 <div class="panel-footer">
+                    <!-- Button back to all entries -->
                     <p><a class="btn btn-primary btn-sm" href="/blogread" role="button">
                             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                             Zur&uumlck

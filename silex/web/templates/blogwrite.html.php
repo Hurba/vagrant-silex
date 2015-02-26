@@ -13,6 +13,7 @@ $slots->set('title', "Blogwrite")
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
+            <!-- Change panel design whether you are logedin or not  -->
             <?php if ($logedin == false) { ?>
                 <div class="panel panel-danger">
                     <div class="panel-heading">Achtung! Erst oben rechts Einloggen</div>
@@ -20,12 +21,15 @@ $slots->set('title', "Blogwrite")
                 <div class="panel panel-default">
                     <div class="panel-heading">Neuer Beitrag</div>
             <?php } ?>
+            <!-- end of panel design -->
                 <div class="panel-body">
+                    <!-- alert if error == true -->
                     <?php if ($error == true) { ?>
                         <div class="alert alert-warning" role="alert">
                             Bitte alle Felder ausfüllen!
                         </div>
                     <?php } ?>
+                    <!-- formuladata handling -->
                     <form action="/blogwrite" method="post">
                         <div class="form-group">
                             <label for="titel">Titel</label>

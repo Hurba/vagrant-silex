@@ -12,6 +12,7 @@ $slots->set('title', $titel)
 <div class="container mainsite">
     <div class="row">
         <div class="col-xs-12">
+            <!-- main attention catcher jumbotron -->
             <div class="jumbotron">
                 <h1>My first Bootstrap website!</h1>
 
@@ -24,6 +25,7 @@ $slots->set('title', $titel)
             </div>
         </div>
     </div>
+    <!-- Some text areas -->
     <div class="row">
         <div class="col-sm-6 col-md-4">
             <ul class="list-group">
@@ -35,7 +37,7 @@ $slots->set('title', $titel)
         </div>
         <div class="col-sm-6 col-md-4">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel-body" id="special-text">
                     alsasdasdalsasdasd
                     asdladlad
                     adleldllda
