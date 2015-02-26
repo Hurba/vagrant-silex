@@ -68,6 +68,12 @@ $title = $slots->get('title', "static");
                         <?php echo(($title == "Login") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
                 </li>
+                <li <?= (($title == "Logout") ? 'class="active"' : '') ?>>
+                    <a href="/logout">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
+                        <?php echo(($title == "Logout") ? '<span class="sr-only">(current)</span>' : '') ?>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

@@ -8,9 +8,9 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->match('/login', function (Request $request) use ($app) {
     $logedin = false;
-    if($request->isMethod('post')) {
+    if ($request->isMethod('post')) {
         $username = $request->get('username', null);
-    }else{
+    } else {
         $username = $app['session']->get('user', null);
     }
 
@@ -23,6 +23,28 @@ $app->match('/login', function (Request $request) use ($app) {
         array('logedin' => $logedin)
     );
 });
+
+$app->get('/logout', function () use ($app) {
+    $logedin = false;
+    $user = $app['session']->get('user');
+    if ($user != null || $user != "") {
+        $logedin = true;
+    }
+    return $app['templating']->render(
+        'logout.html.php',
+        array('logedin' => $logedin)
+    );
+});
+
+$app->get('/logout#', function () use ($app) {
+    $logedin = false;
+    $user = $app['session']->set('user', array('username' => null));
+    return $app['templating']->render(
+        'logout.html.php',
+        array('logedin' => $logedin)
+    );
+});
+
 
 $app->get('/welcome/{name}', function ($name) use ($app) {
     return $app['templating']->render(
