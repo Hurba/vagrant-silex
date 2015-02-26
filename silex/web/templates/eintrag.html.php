@@ -15,7 +15,8 @@ $slots->set('title', "Blogread");
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <b><?= $post["title"] ?></b> vom
-                    <i><?= $post["created_at"] ?></i>
+                    <i><?= $post["created_at"] ?></i> by
+                    <?= $post["user"] ?>
                 </div>
                 <div class="panel-body">
                     <?= $post["text"] ?>

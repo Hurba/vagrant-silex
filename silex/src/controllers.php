@@ -85,9 +85,9 @@ $app->match('/blogwrite', function (Request $request) use ($app) {
     if ($request->isMethod('post')) {
         $titel = $request->get('titel', '');
         $text = $request->get('text', '');
-        if ($titel == '' || $text == '' || $logedin == false) {
+        if ($titel == '' || $text == '' ) {
             $error = true;
-        } else {
+        } else if($logedin){
             /** @var $dbConnecton Doctrine\DBAL\Connection */
             $dbConnection = $app['db'];
             $createdAt = date('Y-m-d');

@@ -8,9 +8,6 @@ $view->extend('layout.html.php');
 $slots->set('title', "Pictures");
 ?>
 
-<link rel="stylesheet" type="text/css"
-      href="/vendor/MyCSS/carousel.css"/>
-
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">

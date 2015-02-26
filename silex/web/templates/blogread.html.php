@@ -23,9 +23,10 @@ $slots->set('title', "Blogread");
                         $titel = $post["title"];
                         $created_at = $post["created_at"];
                         $text = substr($post["text"], 0, 29);
+                        $user = $post["user"];
                         ?>
                         <li class="list-group-item">
-                            <b> <?= $titel ?> </b> vom <i> <?= $created_at ?> </i><br/>
+                            <b> <?= $titel ?> </b> vom <i> <?= $created_at ?> </i> by <?= $user ?><br/>
                             <?= $text ?>
                             <a href="/blogread/<?= $id ?>">[...]</a>
                         </li>

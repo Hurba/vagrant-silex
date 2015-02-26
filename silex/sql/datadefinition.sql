@@ -5,7 +5,8 @@ CREATE TABLE blog_post (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255),
   text TEXT,
-  created_at DATE
+  created_at DATE,
+  user VARCHAR(50)
 );
 
 INSERT INTO blog_post

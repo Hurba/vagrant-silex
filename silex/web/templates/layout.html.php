@@ -15,6 +15,14 @@ $title = $slots->get('title', "static");
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initialscale=1,
             maximum-scale=1, user-scalable=no">
+    <?php if ($title == "My Site") { ?>
+        <link rel="stylesheet" type="text/css"
+              href="/vendor/MyCSS/MySite.css"/>
+    <?php } ?>
+    <?php if ($title == "Pictures") { ?>
+        <link rel="stylesheet" type="text/css"
+              href="/vendor/MyCSS/carousel.css"/>
+    <?php } ?>
     <meta charset="UTF-8">
     <base href="http://localhost:8001/"/>
     <title><?php $slots->output('title', "My Site") ?></title>
@@ -61,6 +69,7 @@ $title = $slots->get('title', "static");
                     </a>
                 </li>
             </ul>
+            <!-- navbar right-->
             <ul class="nav navbar-nav navbar-right">
                 <li <?= (($title == "Login") ? 'class="active"' : '') ?>>
                     <a href="/login">

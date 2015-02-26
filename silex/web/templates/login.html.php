@@ -14,7 +14,7 @@ $slots->set('title', "Login")
         <div class="col-xs-12">
             <?php if ($logedin == true) { ?>
             <div class="panel panel-success">
-                <div class="panel-heading">Sie sind Eingeloged, Ausloggen oben Rechts!</div>
+                <div class="panel-heading">Sie sind Eingelogged, Ausloggen oben Rechts!</div>
             <?php } ?>
             <?php if ($logedin == false) { ?>
             <div class="panel panel-danger">
