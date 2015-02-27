@@ -3,6 +3,7 @@
  * @var $view \Symfony\Component\Templating\PhpEngine
  * @var $error
  * @var $logedin
+ * @var $user
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];
@@ -20,7 +21,7 @@ $slots->set('title', "Blogwrite")
                         <div class="panel-heading">Achtung! Erst oben rechts Einloggen</div>
                 <?php } else { ?>
                     class="panel panel-default">
-                        <div class="panel-heading">Neuer Beitrag</div>
+                        <div class="panel-heading">Neuen Beitrag als <b> <?= $user ?> </b> verfassen</div>
                 <?php } ?>
                 <!-- end of panel design -->
                 <div class="panel-body">

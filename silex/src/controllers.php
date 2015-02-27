@@ -10,22 +10,28 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 $app->match('/login', function (Request $request) use ($app) {
     //always set logedin = false and check later if you are logedin
     $logedin = false;
-    //Login via formular
-    if ($request->isMethod('post')) {
-        $username = $request->get('username', null);
-    } else {
-        //else check session->User
-        $username = $app['session']->get('user', null);
-    }
-    //If User not null or '' then you are logedin (= true) and set session->User
-    if ($username != null || $username != '') {
-        $app['session']->set('user', $username);
+    //Get Username from session or it's null
+    $user = $app['session']->get('user', null);
+    //Check if you are logedin
+    if ($user != null || $user != '') {
         $logedin = true;
     }
-    //return login template with var: $logedin
+    //Login via formular, only when not logedin (= false)
+    if ($request->isMethod('post') && $logedin == false) {
+        $user = $request->get('user', null);
+        //If User not null or '' then you are logedin (= true) and set session->User
+        if ($user != null || $user != '') {
+            $app['session']->set('user', $user);
+            $logedin = true;
+        }
+    }
+    //return login template with var: $logedin, $user
     return $app['templating']->render(
         'login.html.php',
-        array('logedin' => $logedin)
+        array(
+            'logedin' => $logedin,
+            'user' => $user
+        )
     );
 });
 
@@ -41,7 +47,10 @@ $app->get('/logout', function () use ($app) {
     //return logout template with var: $logedin
     return $app['templating']->render(
         'logout.html.php',
-        array('logedin' => $logedin)
+        array(
+            'logedin' => $logedin,
+            'user' => $user
+        )
     );
 });
 
@@ -125,12 +134,13 @@ $app->match('/blogwrite', function (Request $request) use ($app) {
                 'success.html.php');
         }//OK ends
     }
-    //render template with var: $error, $logedin
+    //render template with var: $error, $logedin, $user
     return $app['templating']->render(
         'blogwrite.html.php',
         array(
             'error' => $error,
-            'logedin' => $logedin
+            'logedin' => $logedin,
+            'user' => $user
         )
     );
 });

@@ -1,10 +1,11 @@
 <?php
 /**
- * @var $view
+ * @var $view   \Symfony\Component\Templating\PhpEngine
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];
 $title = $slots->get('title', "static");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,8 @@ $title = $slots->get('title', "static");
     <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initialscale=1,
             maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css"
+          href="/vendor/MyCSS/All.css"/>
     <!-- specific page css included by title -->
     <?php if ($title == "My Site") { ?>
         <link rel="stylesheet" type="text/css"
@@ -78,7 +81,7 @@ $title = $slots->get('title', "static");
                         <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login
                         <?php echo(($title == "Login") ? '<span class="sr-only">(current)</span>' : '') ?>
                     </a>
-                </li>
+                </li
                 <li <?= (($title == "Logout") ? 'class="active"' : '') ?>>
                     <a href="/logout">
                         <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout

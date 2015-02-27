@@ -2,6 +2,7 @@
 /**
  * @var $view   \Symfony\Component\Templating\PhpEngine
  * @var $logedin
+ * @var $user
  * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
  */
 $slots = $view['slots'];
@@ -16,7 +17,7 @@ $slots->set('title', "Login")
             <div
                 <?php if ($logedin == true) { ?>
                     class="panel panel-success">
-                        <div class="panel-heading">Sie sind Angemeldet, Abmelden oben Rechts!</div>
+                        <div class="panel-heading">Sie sind als <b> <?= $user ?> </b> Angemeldet , Abmelden oben Rechts!</div>
                 <?php } ?>
                 <?php if ($logedin == false) { ?>
                     class="panel panel-danger">
